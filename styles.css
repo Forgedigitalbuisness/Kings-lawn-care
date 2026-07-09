@@ -351,17 +351,6 @@ footer h3 {
 
 @media (max-width: 900px) {
 
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .hero h1 {
         font-size: 2.7rem;
     }
@@ -378,7 +367,42 @@ footer h3 {
     .cta-banner h2 {
         font-size: 2rem;
     }
+
+    /* NAVBAR */
+
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 30px 0;
+        gap: 25px;
+        transition: .3s;
+        box-shadow: 0 10px 25px rgba(0,0,0,.1);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
 }
+
 /* HAMBURGER */
 
 .hamburger {
@@ -396,39 +420,8 @@ footer h3 {
     transition: .3s;
 }
 
-/* MOBILE NAVIGATION */
+/* HAMBURGER ANIMATION */
 
-@media (max-width: 900px) {
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-btn {
-        display: none;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 30px 0;
-        gap: 25px;
-        transition: .3s;
-        box-shadow: 0 10px 25px rgba(0,0,0,.1);
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .navbar {
-        position: relative;
-    }
-}
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
